@@ -14,17 +14,8 @@
  * limitations under the License.
  */
 
-import { KubernetesAuthTranslator } from './types';
-import { ServiceAccountClusterDetails } from '../types/types';
-import { KubernetesRequestBody } from '@backstage/plugin-kubernetes-common';
-
-export class ServiceAccountKubernetesAuthTranslator
-  implements KubernetesAuthTranslator
-{
-  async decorateClusterDetailsWithAuth(
-    clusterDetails: ServiceAccountClusterDetails,
-    _requestBody: KubernetesRequestBody,
-  ): Promise<ServiceAccountClusterDetails> {
-    return clusterDetails;
-  }
-}
+export type PagerDutyEntity = {
+  integrationKey?: string;
+  serviceId?: string;
+  name: string;
+};
